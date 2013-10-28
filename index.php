@@ -35,7 +35,7 @@ function getGalleryContent($path) {
             if($entry != '.' && $entry != '..') {
                 if(is_dir($path.$entry) && strpos($entry,'.thumb') === false) {
                     $thumb = getFirstImage($path.$entry.'/', true);
-                    
+
                     $directories[] = array(
                         'name' => $entry,
                         'thumb' => $thumb,
@@ -43,7 +43,7 @@ function getGalleryContent($path) {
                     );
                 } elseif(isImage($path.$entry) === true) {
                     $thumb = getThumb($path, $entry);
-                    
+
                     $files[] = array(
                         'name' => $entry,
                         'thumb' => $thumb,
@@ -53,10 +53,32 @@ function getGalleryContent($path) {
             }
         }
     }
+
+    if(SORT_TYPE == 'name') {
+        if(SORT_ORDER_ASC) {
+            sort($directories);
+            sort($files);
+        } else {
+            rsort($directories);
+            rsort($files);
+        }
+    } elseif(SORT_TYPE == 'name') {
+        uasort($directories, dateCompare($a, $b) );
+        uasort($files, dateCompare($a, $b) );
+    }
+
     return array(
         "directories" => $directories,
         "files" => $files
     );
+}
+
+function dateCompare($a, $b) {
+    if(SORT_ORDER_ASC) {
+        return $a['date'] > $b['date'];
+    } else {
+        return $a['date'] < $b['date'];
+    }
 }
 
 //check if a path is a file AND an image (through getimagesize and image types)
@@ -277,7 +299,6 @@ foreach($gallery['directories'] as $directory) {
             </li>
 <?php
 }
-sort($gallery['files']);
 foreach($gallery['files'] as $file) { ?>
             <li class="img">
                 <a href="<?php echo (USE_DIRECT_LINK === true) ? $path.$file['name'] : '?path='.$relativePath.$file['name']; ?>" title="<?php echo $file['name']."\r"; ?> &bull; last edit: <?php echo date("Y-m-d H:i:s", $file['date']); ?>" class="fancybox" rel="fancybox">

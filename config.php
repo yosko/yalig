@@ -22,6 +22,11 @@
 
 define( "GALLERY_TITLE",      "Yalig" );
 
+//sort & order of images & directories
+define( "SORT_TYPE",          "name" ); //possible values: "name", "date"
+// define( "SORT_DIR_FIRST",     true );   //sort files & directories separatly
+define( "SORT_ORDER_ASC",     true );   //sort in ascending order
+
 // Use Thumbnails
 define( "CREATE_THUMB",       true );
 define( "THUMB_WIDTH",        120 );
