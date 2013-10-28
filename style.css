@@ -1,0 +1,61 @@
+/* 
+ * Yalig - Copyright 2013 Yosko (www.yosko.net)
+ * 
+ * This file is part of Yalig.
+ * 
+ * Yalig is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * Yalig is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Yalig.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
+ 
+body { margin:0.3em; background-color: #4d4741; color: #ebebbc; font-family: "Trebuchet MS", Georgia, sans-serif; }
+h1 { margin: 0.3em; }
+a { color: #d99b21; }
+a:hover { color: #f2b63d; }
+a img { border: none; }
+#content { background-color: #262321; border-radius: 0.3em; padding: 0.3em; }
+.thumbs { list-style:none; margin:0; padding:0.3em 0; text-align:center; color:#fff; }
+.thumbs li {
+    position:relative;
+    display:inline-block;
+    margin:0.2em;
+    border:0.3em solid #408040;
+    border-radius:0.3em;
+}
+.thumbs li:hover { border-color: #59b359; }
+.thumbs li.dir { border-color: #d99b21; }
+.thumbs li.dir:hover { border-color: #f2b63d; }
+.thumbs a { position: relative; display: block; overflow:hidden; }
+.thumbs a .dirName {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    display:block;
+    background: rgba(0, 0, 0, 0.6);
+    word-wrap: break-word;
+}
+.thumbs a:hover .dirName { opacity: 0.3; }
+.fullImg { text-align:center; }
+.fullImg a {
+    display: inline-block;
+    margin:0.2em auto;
+    padding: 0;
+    border:0.3em solid #408040;
+    border-radius:0.3em;
+    line-height: 0;
+}
+.fancybox-skin {
+    background-color: #408040;
+}
+#footer { text-align: center; color: #80766c; font-style: italic; font-size: 0.8em; margin:0.2em; }
+#footer a, #footer a:hover { color: #80766c; }
