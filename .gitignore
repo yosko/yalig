@@ -1,5 +1,4 @@
-tmp/cache/*
-tmp/logs/*
-tmp/sessions/*
+img/*
+.thumb/*
 *.sublime-project
 *.sublime-workspace
