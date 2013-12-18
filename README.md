@@ -3,8 +3,6 @@ Yalig
 
 Yalig (Yet Another Lightweight Image Gallery) is a small web image gallery that try to best as KISS (Keep It Simple Stupid) as possible.
 
-## Functionalities
-
 ## Install
 
 1. Put the files on your server.
