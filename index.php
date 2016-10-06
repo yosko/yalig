@@ -115,7 +115,7 @@ function getFirstImage($path, $getThumb = true) {
 //if not, returns the path to the original image
 function getThumb($path, $file) {
     $thumbPath = preg_replace('%'.GALLERY_PATH.'%', GALLERY_PATH.THUMB_SUBDIRECTORY, $path, 1);
-    $thumbFile = pathinfo($file, PATHINFO_FILENAME).'.jpg';
+    $thumbFile = pathinfo($file, PATHINFO_BASENAME);
 
     if (is_file($thumbPath.$thumbFile)) {
         $source = $thumbPath.$thumbFile;
